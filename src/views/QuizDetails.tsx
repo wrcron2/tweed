@@ -21,7 +21,7 @@ const QuizDetails = () => {
       <h1>Quiz Details for ID: {id}</h1>
 
       <Box maxWidth="240px">
-        <Card as="section" className="card w-[36rem]" padding="3" radius="2">
+        <Card className="card w-[36rem] p-2.5">
           <Flex gap="3" align="center">
             <Avatar
               size="3"

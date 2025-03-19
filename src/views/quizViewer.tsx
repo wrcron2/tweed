@@ -77,7 +77,7 @@ const QuizViewer: React.FC<QuizViewerProps> = () => {
         key={resetKey}
         className="questions-list flex flex-col gap-2.5  max-h-3/4 overflow-y-scroll"
       >
-        {storageQuestions.map((question, index) => (
+        {storageQuestions.map((question) => (
           <div key={question.id} className="bg-white rounded-lg shadow-md">
             <div className="p-6">
               {

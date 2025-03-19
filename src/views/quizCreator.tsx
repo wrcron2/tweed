@@ -7,8 +7,7 @@ import { error } from "console";
 import { useQuiz } from "../context/QuizContext";
 import { LOCAL_STORAGE_KEYS } from "../models/quizModel";
 
-interface QuizCreatorProps {
-}
+interface QuizCreatorProps {}
 
 enum NotificationType {
   SAVE = 1,
@@ -115,6 +114,7 @@ const QuizCreator: React.FC<QuizCreatorProps> = () => {
               Question Text
             </label>
             <textarea
+              onChange={(e) => setQuestionText(e.target.value)}
               value={questionText}
               id="questionText"
               className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -132,6 +132,7 @@ const QuizCreator: React.FC<QuizCreatorProps> = () => {
               Image URL (Optional)
             </label>
             <input
+              onChange={(e) => setImageUrl(e.target.value)}
               value={imageUrl}
               type="text"
               id="imageUrl"
@@ -155,7 +156,7 @@ const QuizCreator: React.FC<QuizCreatorProps> = () => {
             <button
               type="button"
               onClick={handleFetchQuestion}
-              disabled={isLoading}
+              disabled={isLoading ?? false}
               className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md flex items-center justify-center disabled:bg-blue-300"
             >
               {isLoading ? (
@@ -204,7 +205,7 @@ const QuizCreator: React.FC<QuizCreatorProps> = () => {
             </button>
 
             <button
-              disabled={isLoading}
+              disabled={isLoading ?? false}
               onClick={onSaveQuestion}
               type="button"
               className="flex-1 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md flex items-center justify-center disabled:bg-green-300"
